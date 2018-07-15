@@ -213,10 +213,13 @@ def evaluate(model, n_images):
                     target_image.append(list(int_to_color[target[i]]))
                 output_image = np.array(output_image, dtype='uint8').reshape(image_height, imgage_width, 3) # int32 by defaulr
                 target_image = np.array(target_image, dtype='uint8').reshape(image_height, imgage_width, 3)
+                original_image = np.array(images[idx], dtype='uint8').reshape(image_height, imgage_width, 3)
                 img_output = Image.fromarray(output_image, 'RGB')
                 img_target = Image.fromarray(target_image, 'RGB')
+                img_original = Image.fromarray(original_image, 'RGB')
                 img_output.save(os.path.join(output_dir, 'output_' + dataset.file_names[idx]))
                 img_target.save(os.path.join(output_dir, 'target_' + dataset.file_names[idx]))
+                img_original.save(os.path.join(output_dir, 'original_' + dataset.file_names[idx]))
 
             matrix = confusion_matrix(np.array(targets)[0], np.array(outputs)[0])
             FP = matrix.sum(axis=0) - np.diag(matrix)

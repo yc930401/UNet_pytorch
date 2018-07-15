@@ -26,7 +26,7 @@ in order to better localize and learn representations with following convolution
 I don't have access to a powerful GPU, so the model hasn't been trained enough, but we can see that it is going in a correct direction.
 You can train it for another few epochs to get better result.
 Original Image: </br>
-![Original Image](/data/KITTI_SEMANTIC/Validation_07/RGB/000050.png)
+![Original Image](/data/KITTI_SEMANTIC/Result/original_000050.png)
 Ground Truth: </br>
 ![Original Image](/data/KITTI_SEMANTIC/Result/target_000050.png)
 Output: </br>
